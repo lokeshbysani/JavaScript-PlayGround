@@ -38,3 +38,24 @@ const bookFlight = function(flighName,noOfPassengers =1,ticketPrice = 199){
 }
 
 bookFlight('Indigo',5,199);
+
+//pass by Value
+
+const flight = 'Indigo1234';
+
+const personJonas = {
+    name : 'Lokesh Bysani',
+    passport : '12346789'
+
+}
+
+function checkIn(flight,personJonas){
+    flight = 'Indigo4321';
+    personJonas.name = 'Mr. '+personJonas.name;
+}
+// Pass By Value and refernce .
+checkIn(flight,personJonas);
+// As its primitive value its value is not changed outside of the function
+console.log(flight);
+// As its an object . Changed value is refelected outside of the function as well. 
+console.log(personJonas);
