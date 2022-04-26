@@ -25,3 +25,16 @@ const yearsUntilRetirement = birthYear => {
 }
 
 console.log(yearsUntilRetirement(1998))
+
+//default parameters
+
+const bookings = [];
+
+const bookFlight = function(flighName,noOfPassengers =1,ticketPrice = 199){
+    const booking = {
+        flighName,noOfPassengers,ticketPrice
+    }
+    console.log(booking)
+}
+
+bookFlight('Indigo',5,199);
