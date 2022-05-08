@@ -52,8 +52,12 @@ const restaurant = {
     },
   };
 
-
-  //spread operator ...{arrayname}
+/*
+The spread operator (...) unpacks the elements of an iterable object.
+spread operator ...{arrayname} always on the right side of equal sign
+The rest parameter (...) packs the elements into an array / always on the left side of the equal sign 
+*/
+ 
 const userNames = ['a','b','c']
 console.log(userNames)
 const newUserNames = ['e','f',...userNames]
@@ -74,6 +78,7 @@ console.log(...fullName)
 
 
 
+
 /*
 The spread operator (...) unpacks the elements of an iterable object.
 The rest parameter (...) packs the elements into an array.
@@ -81,7 +86,8 @@ The rest parameter (...) packs the elements into an array.
 
 const arrJS = [1,2,3,5,8,9,'Hello','JavaScript']
 arrJS.length // return total number of elements in array
-
+const [a,b,...newArrJS] = arrJS
+console.log("New ArrayJS"+ newArrJS) 
 
 //Adding / removing elements
 
@@ -139,5 +145,27 @@ console.log(starterMenu.includes(userName)); //return true or false
 console.log([NaN].includes(NaN));
 console.log([-0].includes(+0));
 //find and find index - check videos
+
+/*
+Logical Operators
+Can use any data type 
+can return any datatype
+short-circuting 
+*/
+console.log(3 || 'hello') //  || (if first operand is truthy then that operator is returned. in this case JS does not consider second operand itself) 
+console.log(0 || 'hello') 
+console.log(true || 0)
+console.log(undefined || null)  // As both are falsy values JS checks for both operands and returns the second one
+console.log(null || undefined)
+let ab;
+console.log('g' && 'h') // it checks for all values in the expression. Both && and || checks for truthy or falsy values
+console.log(ab && 0) //if both are falsy then returns first value
+
+//nullish coalescing operator ?? check for only null or undefined
+console.log('h' ?? 'g')
+console.log(ab ?? 'h') // only if first operand is null or undefined then it would proceed to next operand
+
+
+
 
 
