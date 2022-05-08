@@ -94,3 +94,9 @@ rest2.owner &&= '<ANONYMOUS>';
 console.log(rest1)
 console.log(rest2)
 
+
+//loop through keys in objects
+
+for(let item in restaurant){
+  console.log(item + restaurant[item])
+}
