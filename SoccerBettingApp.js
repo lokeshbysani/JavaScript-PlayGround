@@ -31,8 +31,7 @@ const game = {
     ],
     ],
     score: '4:0',
-    scored: ['Lewandowski', 'Gnarby', 'Lewandowski',
-    'Hummels'],
+    scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
     date: 'Nov 9th, 2037',
     odds: {
     team1: 1.33,
@@ -61,4 +60,33 @@ printGoals(...game.scored);
 team1 < team2 && console.log('Team1 is likely to win');
 team1 > team2 && console.log('Team2 is likely to win');
 
+
+for(const [index,playerName] of game.scored.entries()){
+    console.log(`Goal ${index+1}:${playerName}`)
+}
+
+
+
+console.log(Object.keys(game.odds));
+console.log(Object.values(game.odds));
+
+
+let average = 0;
+const odds = Object.values(game.odds);
+for(const value of odds){
+    average += value
+}
+console.log(average/odds.length)
+
+const scorers = {};
+
+for(const playerName of game.scored){
+    scorers[playerName] = (scorers[playerName] || 0) +1
+};
+console.log(scorers)
+
+
+for(const team of Object.keys(game.odds)){
+    console.log(`Odd of victory ${game[team] ??'draw'}: ${game.odds[team]}`)
+};
 
