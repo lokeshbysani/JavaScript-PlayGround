@@ -61,3 +61,36 @@ const restaurant = {
 
  console.log(a,b)
 
+//Logical Assignment operators
+
+const rest1 ={
+  name:'Kritunga',
+  numguests:0
+};
+
+const rest2 = {
+  name:'Meghana',
+  owner:'Meghana Owner'
+}; 
+/*
+rest1.numguests = rest1.numguests || 10;
+rest2.numguests = rest2.numguests ||200;
+*/
+
+//Logical or assignment operator
+rest1.numguests ||= 10;
+rest2.numguests ||= 10;
+
+
+//Logical Nullish Operator
+rest1.numguests ??= 10;
+rest2.numguests ??= 10;
+
+//Logical And Assignment
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+
+console.log(rest1)
+console.log(rest2)
+
