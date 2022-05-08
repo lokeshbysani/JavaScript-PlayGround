@@ -166,6 +166,38 @@ console.log('h' ?? 'g')
 console.log(ab ?? 'h') // only if first operand is null or undefined then it would proceed to next operand
 
 
+//Looping arrays
+//for of loop. Can use continue and break
+const allPlayers = [
+  'Neuer',       'Pavard',
+  'Martinez',    'Alaba',
+  'Davies',      'Kimmich',
+  'Goretzka',    'Coman',
+  'Muller',      'Gnarby',
+  'Lewandowski', 'Burki',
+  'Schulz',      'Hummels',
+  'Akanji',      'Hakimi',
+  'Weigl',       'Witsel',
+  'Hazard',      'Brandt',
+  'Sancho',      'Gotze'
+];
+console.log('Writing all players')
+for(const player of allPlayers){
+  console.log(player)
+};
+
+console.log([...allPlayers.entries()])
+//get index of item using for of loop
+for(const [index,playerName] of allPlayers.entries()){
+  console.log(`${index+1} : ${playerName}`)
+}
 
 
+for(let i=0;i<allPlayers.length;i++){
+  console.log(allPlayers[i]+'at index'+i)
+}
+//for in loop . it provides the index of each element in array. Its mainly used to loop through objects
+for(let x in allPlayers){
+  console.log(x,allPlayers[x])
+}
 
