@@ -11,6 +11,21 @@ console.log(jonas.age)
 console.log(`${jonas.firstName} has ${jonas.friends.length} freinds, and his best friend is ${jonas.friends[0]}`)
 */
 
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 //Destructuring Objects
 
 const restaurant = {
@@ -19,23 +34,11 @@ const restaurant = {
     categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
     starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
     mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+    openingHours,
     order : function(straterIndex,mainIndex){
       return [this.starterMenu[straterIndex],this.mainMenu[mainIndex]]
     },
-    openingHours: {
-      thu: {
-        open: 12,
-        close: 22,
-      },
-      fri: {
-        open: 11,
-        close: 23,
-      },
-      sat: {
-        open: 0, // Open 24 hours
-        close: 24,
-      },
-    },
+    
   };
 
 
@@ -100,3 +103,9 @@ console.log(rest2)
 for(let item in restaurant){
   console.log(item + restaurant[item])
 }
+//console.log(restaurant.openingHours.mon.open) // this gives error as we dont have any property as mon and we are trying to get an object on undefined
+//optional chaining
+
+console.log(restaurant.openingHours?.mon?.open) // here it checks for nullish check and if exists then it returns undefined without processing further
+
+
