@@ -15,7 +15,7 @@ console.log(stringSet)
 orderSet.add('GarlicBread')  //adds an element to Sets
 orderSet.delete('pasta') //delete an elements from Set
 console.log(orderSet)
-orderSet.clear() //deletes all elements from the sets
+orderSet.clear() //deletes all elements from the sets.
 
 //Looping through elements in sets
 for(const order of orderSet) console.log(order)
