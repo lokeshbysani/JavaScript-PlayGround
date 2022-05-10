@@ -85,8 +85,38 @@ for(const playerName of game.scored){
 };
 console.log(scorers)
 
+//coding challenge 3
 
-for(const team of Object.keys(game.odds)){
-    console.log(`Odd of victory ${game[team] ??'draw'}: ${game.odds[team]}`)
-};
+const gameEvents = new Map([
+    [17, '⚽ GOAL'],
+    [36, '� Substitution'],
+    [47, '⚽ GOAL'],
+    [61, '� Substitution'],
+    [64, '� Yellow card'],
+    [69, '� Red card'],
+    [70, '� Substitution'],
+    [72, '� Substitution'],
+    [76, '⚽ GOAL'],
+    [80, '⚽ GOAL'],
+    [92, '� Yellow card'],
+    ]);
+
+//1. Create an array 'events' of the different game events that happened (no duplicates)
+
+const events = [...new Set(gameEvents.values())]
+console.log(events)
+
+
+//2. After the game has finished, is was found that the yellow card from minute 64 was unfair. So remove this event from the game events log.
+gameEvents.delete(64)
+
+
+// for(const team of Object.keys(game.odds)){
+//     console.log(`Odd of victory ${game[team] ??'draw'}: ${game.odds[team]}`)
+// };
+// 4. Loop over 'gameEvents' and log each element to the console, marking whether it's in the first half or second half (after 45 min) of the game, like this: [FIRST HALF] 17: ⚽ GOAL
+for(const [time,game] of gameEvents){
+    const timeSlot = time <= 45 ?'[FIRST HALF]':'[SECOND HALF]'
+    console.log(`${timeSlot} ${time}: ${game}`)
+}
 
